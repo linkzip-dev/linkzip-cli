@@ -1,0 +1,35 @@
+{
+    "plugins": ["prettier", "jest"],
+    "env": {
+        "browser": false,
+        "commonjs": true,
+        "es2021": true,
+        "node": true
+    },
+    "extends": ["eslint:recommended", "prettier"],
+    "overrides": [
+        {
+            "files": [
+                "tests/*.test.js"
+            ],
+            "env": {
+                "jest": true
+            }
+        }
+    ],
+    "parserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "ignorePatterns": [
+        "node_modules",
+        "build"
+    ],
+    "rules": {
+        "jest/no-disabled-tests": "warn",
+        "jest/no-focused-tests": "error",
+        "jest/no-identical-title": "error",
+        "jest/prefer-to-have-length": "warn",
+        "jest/valid-expect": "error",
+        "prettier/prettier": ["error"]
+    }
+}

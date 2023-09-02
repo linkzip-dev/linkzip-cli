@@ -10,10 +10,11 @@ const fs = require("fs");
 function processResponse(res) {
   if (res.status === "ok") {
     console.log(`Deployed! ${green(res.message)}`);
-    qrcode.generate(res.message, { small: true });
+    const CI = process.env["CI"];
+    if (!CI) qrcode.generate(res.message, { small: true });
   } else {
     const message = apiErrors[res.message];
-    console.log(`Error: ${red(message)}`);
+    console.log(red(`Error: code=${res.message}, message=${message}`));
   }
 }
 

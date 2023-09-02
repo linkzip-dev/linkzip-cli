@@ -1,10 +1,21 @@
 const { color } = require("console-log-colors");
-const { green } = color;
+const { green, red } = color;
 const { getCurrentPath, getConfigDir } = require("../helpers/filesystem");
 const { zipBuild } = require("../services/zip");
 const { uploadBuild } = require("../services/api");
+const { apiErrors } = require("../errors");
 const qrcode = require("qrcode-terminal");
 const fs = require("fs");
+
+function processResponse(res) {
+  if (res.status === "ok") {
+    console.log(`Deployed! ${green(res.message)}`);
+    qrcode.generate(res.message, { small: true });
+  } else {
+    const message = apiErrors[res.message];
+    console.log(`Error: ${red(message)}`);
+  }
+}
 
 function deployCommand(yargs, config) {
   const currentPath = getCurrentPath();
@@ -13,9 +24,8 @@ function deployCommand(yargs, config) {
     console.log("-----");
     const configDir = getConfigDir(config.systemConfig.configFolder);
     uploadBuild(configDir, projectConfigFile, config, archiveFile, function (res) {
-      console.log(`Deployed! ${green(res.message)}`);
       fs.unlinkSync(archiveFile);
-      qrcode.generate(res.message, { small: true });
+      processResponse(res);
     });
   });
 }

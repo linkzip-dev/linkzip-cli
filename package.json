@@ -30,6 +30,7 @@
     },
     "dependencies": {
         "archiver": "^5.3.1",
+        "cli-table": "^0.3.11",
         "console-log-colors": "^0.2.3",
         "prompts": "^2.4.2",
         "qrcode-terminal": "^0.12.0",

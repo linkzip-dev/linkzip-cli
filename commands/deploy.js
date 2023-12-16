@@ -8,13 +8,16 @@ const qrcode = require("qrcode-terminal");
 const fs = require("fs");
 
 function processResponse(res) {
+  const contentType = res.headers.get("content-type");
   if (res.status === "ok") {
     console.log(`Deployed! ${green(res.message)}`);
     const CI = process.env["CI"];
     if (!CI) qrcode.generate(res.message, { small: true });
-  } else {
+  } else if (contentType.indexOf("application/json") !== -1) {
     const message = apiErrors[res.message];
     console.log(red(`Error: code=${res.message}, message=${message}`));
+  } else {
+    console.log(red(`Error: ${res.statusCode}`));
   }
 }
 

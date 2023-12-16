@@ -1,8 +1,9 @@
 const fs = require("fs");
 
-function getCredentials(credentialsPath) {
+function getCredentials(credentialsPath, showError = true) {
   if (!fs.existsSync(credentialsPath)) {
-    console.log(`Credentials file ${credentialsPath} not found`);
+    if (showError) console.log(`Credentials file ${credentialsPath} not found`);
+    return new Object();
   }
   return JSON.parse(fs.readFileSync(credentialsPath, "utf8"));
 }

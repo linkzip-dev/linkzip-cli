@@ -42,7 +42,7 @@ linkzip deploy
 
 Prepare and deploy the zip archive to [**linkzip**](https://app.linkzip.dev).
 
-![deploy](images/init.svg)
+![deploy](images/deploy.svg)
 
 ### Options
 

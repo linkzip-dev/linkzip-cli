@@ -27,6 +27,12 @@ yargs(hideBin(process.argv))
     },
   )
   .command("deploy", "Deploy zip archive", () => {
+    yargs.positional("message", {
+      describe: "Deployment message",
+      type: "string",
+      alias: "m",
+      default: "",
+    });
     deployCommand(yargs, config);
   })
   .command(

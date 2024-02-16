@@ -22,7 +22,7 @@ async function initCommand(yargs, config) {
       type: "text",
       name: "build_dir",
       message: "Upload directory path?",
-      validate: (value) => (!fs.existsSync(value) ? ` The directory "${value}" does not exist` : true),
+      // validate: (value) => (!fs.existsSync(value) ? ` The directory "${value}" does not exist` : true),
     },
   ];
   const response = await prompts(questions);

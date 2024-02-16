@@ -2,9 +2,17 @@
 
 This CLI tool simplifies the deployment process of a zip archive with static content to linkzip.dev.
 
-Below are the commands to start using linkzip in your project:
+### Installation
+
+To use LinkZip, ensure you have Node.js and npm installed on your system. Then, you can install LinkZip globally using npm:
+
+```bash
+npm install -g linkzip-cli
+```
 
 ### Commands
+
+Below are the commands to start using linkzip in your project:
 
 #### 1. `configure`
 
@@ -14,7 +22,7 @@ linkzip configure
 
 This will prompt you to enter your API keys and create a configuration file specific to the current system user.
 
-[![asciicast](https://asciinema.org/a/QVjjA1dnjsffGjslkeQYIzxJg.svg)](https://asciinema.org/a/QVjjA1dnjsffGjslkeQYIzxJg)
+![configure](images/configure.svg)
 
 #### 2. `init`
 
@@ -24,7 +32,7 @@ linkzip init
 
 Initialize the project and specify the project ID (copy from [**linkzip**](https://app.linkzip.dev) dashboard) and local folder with static files to deploy.
 
-[![asciicast](https://asciinema.org/a/CDZrcIWc3YNreQ42eHIGlapyp.svg)](https://asciinema.org/a/CDZrcIWc3YNreQ42eHIGlapyp)
+![init](images/init.svg)
 
 #### 3. `deploy`
 
@@ -34,7 +42,7 @@ linkzip deploy
 
 Prepare and deploy the zip archive to [**linkzip**](https://app.linkzip.dev).
 
-[![asciicast](https://asciinema.org/a/wQesSNvvltedquDMVxSzL3nsR.svg)](https://asciinema.org/a/wQesSNvvltedquDMVxSzL3nsR)
+![deploy](images/init.svg)
 
 ### Options
 

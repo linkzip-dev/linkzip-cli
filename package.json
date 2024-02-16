@@ -1,6 +1,6 @@
 {
     "name": "linkzip-cli",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "linkzip cli interface",
     "main": "index.js",
     "scripts": {

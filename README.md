@@ -22,7 +22,7 @@ linkzip configure
 
 This will prompt you to enter your API keys and create a configuration file specific to the current system user.
 
-![configure](images/configure.svg)
+![configure](https://raw.githubusercontent.com/linkzip-dev/linkzip-cli/main/images/configure.svg)
 
 #### 2. `init`
 
@@ -32,7 +32,7 @@ linkzip init
 
 Initialize the project and specify the project ID (copy from [**linkzip**](https://app.linkzip.dev) dashboard) and local folder with static files to deploy.
 
-![init](images/init.svg)
+![init](https://raw.githubusercontent.com/linkzip-dev/linkzip-cli/main/images/init.svg)
 
 #### 3. `deploy`
 
@@ -42,7 +42,7 @@ linkzip deploy
 
 Prepare and deploy the zip archive to [**linkzip**](https://app.linkzip.dev).
 
-![deploy](images/deploy.svg)
+![deploy](https://raw.githubusercontent.com/linkzip-dev/linkzip-cli/main/images/deploy.svg)
 
 ### Options
 

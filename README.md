@@ -1,10 +1,10 @@
-**LinkZip Deployment CLI Tool**
+## **LinkZip Deployment CLI Tool**
 
-This CLI tool simplifies the deployment process of a zip archive with static content to linkzip.dev.
+[**LinkZip**](https://app.linkzip.dev) CLI is a powerful tool designed to streamline the deployment process of static content packaged within a zip archive to [**LinkZip**](https://app.linkzip.dev) services. With its intuitive interface, developers can effortlessly package and deploy their web assets, ensuring rapid and efficient delivery to [**LinkZip's**](https://app.linkzip.dev) hosting platform. Simplify your deployment workflow and accelerate your development cycle with [**LinkZip**](https://app.linkzip.dev) CLI.
 
 ### Installation
 
-To use LinkZip, ensure you have Node.js and npm installed on your system. Then, you can install LinkZip globally using npm:
+To use [**LinkZip**](https://app.linkzip.dev), ensure you have Node.js and npm installed on your system. Then, you can install [**LinkZip**](https://app.linkzip.dev) cli globally using npm:
 
 ```bash
 npm install -g linkzip-cli
@@ -12,7 +12,7 @@ npm install -g linkzip-cli
 
 ### Commands
 
-Below are the commands to start using linkzip in your project:
+Below are the commands to start using [**LinkZip**](https://app.linkzip.dev) in your project:
 
 #### 1. `configure`
 

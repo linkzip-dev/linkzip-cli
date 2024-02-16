@@ -3,7 +3,7 @@ const fs = require("fs");
 const path = require("path");
 const { getApiToken, getProjectConfig } = require("../helpers/config");
 
-function uploadBuild(currentPath, projectConfigFile, config, buildFile, callback) {
+function uploadBuild(currentPath, projectConfigFile, config, buildFile, deployMessage, callback) {
   const apiURL = config.systemConfig.api;
   const credentialsFilePath = `${currentPath}/${config.systemConfig.configFileName}`;
   const token = getApiToken(credentialsFilePath);
@@ -16,6 +16,7 @@ function uploadBuild(currentPath, projectConfigFile, config, buildFile, callback
     headers: {
       "X-AUTH-TOKEN": token,
       "X-AUTH-PROJECT": projectCredentials.project_id,
+      "X-MESSAGE": deployMessage,
     },
     formData: {
       build_file: {

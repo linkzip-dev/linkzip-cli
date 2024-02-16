@@ -22,12 +22,13 @@ function processResponse(res) {
 }
 
 function deployCommand(yargs, config) {
+  const deployMessage = yargs.argv["message"];
   const currentPath = getCurrentPath();
   const projectConfigFile = `${currentPath}/${config.systemConfig.configProjectFileName}`;
   zipBuild(config, projectConfigFile, currentPath, function (archiveFile) {
     console.log("-----");
     const configDir = getConfigDir(config.systemConfig.configFolder);
-    uploadBuild(configDir, projectConfigFile, config, archiveFile, function (res) {
+    uploadBuild(configDir, projectConfigFile, config, archiveFile, deployMessage, function (res) {
       fs.unlinkSync(archiveFile);
       processResponse(res);
     });
